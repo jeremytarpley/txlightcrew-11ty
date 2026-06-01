@@ -1,0 +1,35 @@
+<header class="site-header" id="site-header" role="banner">
+  <a href="/" class="header-logo" aria-label="Texas Light Crew — Home">
+    <img src="/images/logo.svg" alt="Texas Light Crew" width="160" height="48">
+  </a>
+
+  <button class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="primary-nav" aria-label="Open navigation menu">
+    <span class="nav-toggle__bar"></span>
+    <span class="nav-toggle__bar"></span>
+    <span class="nav-toggle__bar"></span>
+  </button>
+
+  <nav class="primary-nav" id="primary-nav" aria-label="Primary navigation">
+    <ul class="nav-list" role="list">
+      <li><a href="/" class="nav-link">Home</a></li>
+      <li class="nav-item--dropdown">
+        <button class="nav-link nav-link--dropdown" aria-expanded="false" aria-haspopup="true">
+          Service Areas <span aria-hidden="true">▾</span>
+        </button>
+        <ul class="dropdown-menu" role="list">
+          <li><a href="/bcs/" class="dropdown-link">Bryan / College Station</a></li>
+          <li><a href="/austin-leander/" class="dropdown-link">Cedar Park, Round Rock &amp; Austin Area</a></li>
+          <li><a href="/waco/" class="dropdown-link">Waco</a></li>
+          <li><a href="/austin-commercial/" class="dropdown-link">Austin Commercial</a></li>
+        </ul>
+      </li>
+      <li><a href="/services/" class="nav-link">Services</a></li>
+      <li><a href="/projects/" class="nav-link">Projects</a></li>
+      <li><a href="/about/" class="nav-link">About</a></li>
+      <li><a href="/contact/" class="nav-link">Contact</a></li>
+    </ul>
+    <button class="btn btn--primary nav-cta" id="header-quote-btn" aria-haspopup="dialog">Get a Free Quote</button>
+  </nav>
+
+  <div class="nav-backdrop" id="nav-backdrop" aria-hidden="true"></div>
+</header>

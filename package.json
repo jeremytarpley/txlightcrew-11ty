@@ -1,0 +1,12 @@
+{
+  "name": "txlightcrew-11ty",
+  "version": "1.0.0",
+  "description": "Texas Light Crew - Professional Christmas Light Installation",
+  "scripts": {
+    "start": "npx @11ty/eleventy --serve",
+    "build": "npx @11ty/eleventy"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^3.0.0"
+  }
+}

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ title or "Professional Christmas Light Installation | Texas Light Crew" }}</title>
+  <meta name="description" content="{{ description or "Have the best Christmas lights in the neighborhood this year without lifting a finger. Local first responders will hang your lights for you!" }}">
+
+  <!-- Canonical -->
+  <link rel="canonical" href="{{ canonical or "https://texaslightcrew.com/" }}">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="{{ canonical or "https://texaslightcrew.com/" }}">
+  <meta property="og:title" content="{{ title or "Professional Christmas Light Installation | Texas Light Crew" }}">
+  <meta property="og:description" content="{{ description or "Have the best Christmas lights in the neighborhood this year without lifting a finger. Local first responders will hang your lights for you!" }}">
+  <meta property="og:site_name" content="Texas Light Crew">
+  <meta property="og:locale" content="en_US">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{{ title or "Professional Christmas Light Installation | Texas Light Crew" }}">
+  <meta name="twitter:description" content="{{ description or "Have the best Christmas lights in the neighborhood this year without lifting a finger. Local first responders will hang your lights for you!" }}">
+
+  <!-- Robots -->
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+
+  <!-- Preload hero image for LCP -->
+  {% if preloadImage %}<link rel="preload" as="image" href="{{ preloadImage }}" fetchpriority="high">{% endif %}
+
+  <!-- Inline critical CSS (prevents render-blocking) -->
+  <style>
+    /* === CRITICAL CSS — above the fold only === */
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{
+      --navy:#0a1628;
+      --navy-mid:#102040;
+      --navy-light:#1a3a5c;
+      --red:#c8102e;
+      --red-dark:#a00c24;
+      --white:#ffffff;
+      --off-white:#f4f6f8;
+      --gray:#8a9bb0;
+      --gold:#f0b429;
+      --text:#e8edf5;
+      --font-display:'Playfair Display',Georgia,serif;
+      --font-body:'Source Sans 3','Source Sans Pro',system-ui,sans-serif;
+    }
+    html{scroll-behavior:smooth}
+    body{background:var(--navy);color:var(--text);font-family:var(--font-body);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
+    .skip-link{position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden}
+    .skip-link:focus{left:1rem;top:1rem;width:auto;height:auto;padding:.5rem 1rem;background:var(--red);color:#fff;z-index:9999;border-radius:4px;text-decoration:none}
+    /* Nav critical */
+    .site-header{position:fixed;top:0;left:0;right:0;z-index:100;padding:.75rem 1.25rem;display:flex;align-items:center;justify-content:space-between;transition:background .3s,box-shadow .3s}
+    .site-header.scrolled{background:rgba(10,22,40,.97);box-shadow:0 2px 20px rgba(0,0,0,.4)}
+    .header-logo img{height:48px;width:auto}
+    /* Hero critical */
+    .hero{min-height:100svh;display:flex;align-items:center;position:relative;overflow:hidden;padding-top:80px}
+    .hero__bg{position:absolute;inset:0;background:linear-gradient(135deg,var(--navy) 0%,var(--navy-mid) 60%,#0d2a4a 100%)}
+    .hero__overlay{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(10,22,40,.3) 0%,rgba(10,22,40,.55) 100%)}
+    .hero__content{position:relative;z-index:2;padding:3rem 1.25rem 4rem;max-width:680px;margin:0 auto;text-align:center}
+    .hero__eyebrow{display:inline-block;font-size:.8rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;padding:.35rem .85rem;border:1px solid rgba(240,180,41,.35);border-radius:2px}
+    .hero__title{font-family:var(--font-display);font-size:clamp(2.4rem,7vw,4.5rem);line-height:1.1;font-weight:700;color:var(--white);margin-bottom:1rem}
+    .hero__title em{color:var(--gold);font-style:normal}
+    .hero__sub{font-size:clamp(1rem,2.5vw,1.2rem);color:rgba(232,237,245,.8);margin-bottom:2rem;max-width:500px;margin-left:auto;margin-right:auto}
+    .btn{display:inline-block;font-family:var(--font-body);font-weight:700;font-size:1rem;text-decoration:none;border:none;cursor:pointer;border-radius:3px;transition:background .2s,transform .15s,box-shadow .2s;letter-spacing:.04em}
+    .btn--primary{background:var(--red);color:#fff;padding:.9rem 2.2rem;box-shadow:0 4px 20px rgba(200,16,46,.4)}
+    .btn--primary:hover,.btn--primary:focus{background:var(--red-dark);transform:translateY(-2px);box-shadow:0 8px 28px rgba(200,16,46,.5)}
+    .btn--primary:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+    /* Utility */
+    .container{width:100%;max-width:1180px;margin-left:auto;margin-right:auto;padding-left:1.25rem;padding-right:1.25rem}
+  </style>
+
+  <!-- Deferred full CSS -->
+  <link rel="preload" href="/css/main.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="/css/main.css"></noscript>
+
+  <!-- Schema.org JSON-LD -->
+  
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  {% include "header.njk" %}
+
+  <main id="main-content">
+    {{ content | safe }}
+  </main>
+
+  {% include "footer.njk" %}
+
+  <!-- Quote modal -->
+  {% include "quote-modal.njk" %}
+
+  <script src="/js/main.js" defer></script>
+</body>
+</html>
